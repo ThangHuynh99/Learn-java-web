@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 6 elements from project &apos;javaweb_10_2020&apos;&#x0D;&#x0A;- Original project: &apos;javaweb_10_2020&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     avatars&#x0D;&#x0A;     css&#x0D;&#x0A;     font-awesome&#x0D;&#x0A;     fonts&#x0D;&#x0A;     img&#x0D;&#x0A;     js" description="Delete elements" element1="src/main/webapp/template/admin/avatars" element2="src/main/webapp/template/admin/font-awesome" element3="src/main/webapp/template/admin/img" element4="src/main/webapp/template/admin/js" element5="src/main/webapp/template/admin/css" element6="src/main/webapp/template/admin/fonts" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="6" stamp="1602608016276" subPackages="false" version="1.0"/>
+</session>

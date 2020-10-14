@@ -1,0 +1,16 @@
+
+Oct 06, 2020 24:11:20.949 NEW SESSION
+Oct 06, 2020 24:11:20.950 [6296:4284:1006/001120.893:ERROR:media_history_store.cc(363)] Failed to create or update the media history store.
+
+Oct 08, 2020 16:49:57.997 NEW SESSION
+Oct 08, 2020 16:49:57.998 [5488:12032:1008/164957.991:ERROR:media_history_store.cc(363)] Failed to create or update the media history store.
+
+Oct 08, 2020 23:14:11.307 NEW SESSION
+Oct 08, 2020 23:14:11.307 [6152:6844:1008/231411.307:ERROR:media_history_store.cc(363)] Failed to create or update the media history store.
+
+Oct 13, 2020 22:37:52.848 NEW SESSION
+Oct 13, 2020 22:37:52.848 [7796:10124:1013/223752.826:ERROR:media_history_store.cc(363)] Failed to create or update the media history store.
+Oct 13, 2020 23:22:52.291 [13544:7380:1013/232252.291:ERROR:media_history_store.cc(363)] Failed to create or update the media history store.
+
+Oct 14, 2020 07:23:49.97 NEW SESSION
+Oct 14, 2020 07:23:49.98 [11960:7584:1014/072349.093:ERROR:media_history_store.cc(363)] Failed to create or update the media history store.
