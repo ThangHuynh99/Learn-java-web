@@ -17,7 +17,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
    
 </head>
-<body class="no-skin">
+<body cl ass="no-skin">
 	<!-- header -->
     <%@ include file="/common/admin/header.jsp" %>
     <!-- header -->

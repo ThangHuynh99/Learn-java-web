@@ -7,4 +7,27 @@
 <fullyQualifiedTypeName name="javax.servlet.ServletException"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.model.UserModel"/>
+<fullyQualifiedTypeName name="java.sql.Timestamp"/>
+<fullyQualifiedTypeName name="java.lang.Long"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.model.AbstractModel"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.service.INewServiec"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.dao.ICategoryDAO"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.model.CatogoryModel"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.mysql.cj.jdbc.PreparedStatementWrapper"/>
+<fullyQualifiedTypeName name="javax.inject.Inject"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.service.ICategoryService"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.dao.INewDAO"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.service.INewService"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.dao.GenericDAO"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.dao.impl.AbstractDAO"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.dao.impl.CategoryDAO"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.model.CategoryModel"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.model.NewModel"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.mapper.RowMapper"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
 </qualifiedTypeNameHistroy>

@@ -1,8 +1,12 @@
 package com.laptrinhjavaweb.model;
 
-public class UserModel {
+public class UserModel extends AbstractModel{
+	
 	private String userName;
 	private String fullName;
+	private String passWord;
+	private int status;
+	private Long roleId;
 	
 	public String getUserName() {
 		return userName;
@@ -10,6 +14,30 @@ public class UserModel {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public String getPassWord() {
+		return passWord;
+	}
+
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
+	public long getRoleId() {
+		return roleId;
+	}
+
+	public void setRoleId(long roleId) {
+		this.roleId = roleId;
 	}
 
 	public String getFullName() {
