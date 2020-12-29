@@ -1,25 +1,50 @@
 package com.laptrinhjavaweb.model;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
-public class AbstractModel {
+public class AbstractModel<T> {
 	
 	private Long id;
 	private Timestamp createdDate;
 	private Timestamp modifiedDate;
 	private String createdBy;
 	private String modifiedBy;
+	private long[] ids;
+	private List<T> listResult = new ArrayList<>(); 
+	private Integer page;// page dang hien thi
+	private Integer maxPageItem;// tong so page hien thi
+	private Integer totalPage;// tong so page
+	private Integer totalItems;
 	
-	
-	public Long getId() {
-		return id;
+	public List<T> getListResult() {
+		return listResult;
 	}
 
 
-	public void setId(long id) {
+	public void setListResult(List<T> listResult) {
+		this.listResult = listResult;
+	}
+
+
+	public long[] getIds() {
+		return ids;
+	}
+
+
+	public void setIds(long[] ids) {
+		this.ids = ids;
+	}
+
+
+	public void setId(Long id) {
 		this.id = id;
 	}
 
+	public Long getId() {
+		return id;
+	}
 
 	public Timestamp getCreatedDate() {
 		return createdDate;
@@ -60,10 +85,53 @@ public class AbstractModel {
 		this.modifiedBy = modifiedBy;
 	}
 
-
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 	}
+
+
+	public Integer getPage() {
+		return page;
+	}
+
+
+	public void setPage(Integer page) {
+		this.page = page;
+	}
+
+
+	public Integer getMaxPageItem() {
+		return maxPageItem;
+	}
+
+
+	public void setMaxPageItem(Integer maxPageItem) {
+		this.maxPageItem = maxPageItem;
+	}
+
+
+	public Integer getTotalPage() {
+		return totalPage;
+	}
+
+
+	public void setTotalPage(Integer totalPage) {
+		this.totalPage = totalPage;
+	}
+
+
+	public Integer getTotalItems() {
+		return totalItems;
+	}
+
+
+	public void setTotalItems(Integer totalItems) {
+		this.totalItems = totalItems;
+	}
+
+
+	
 
 }

@@ -1,6 +1,6 @@
 package com.laptrinhjavaweb.model;
 
-public class NewModel extends AbstractModel {
+public class NewModel<T> extends AbstractModel<NewModel> {
 
 	private String title;
 	private String thumbnail;
@@ -8,7 +8,7 @@ public class NewModel extends AbstractModel {
 	private String content;
 	private Long categoryID;
 	
-	
+
 	public String getTitle() {
 		return title;
 	}

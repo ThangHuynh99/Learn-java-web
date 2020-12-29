@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.laptrinhjavaweb.util&apos; to &apos;com.laptrinhjavaweb.utils&apos;&#x0D;&#x0A;- Original project: &apos;javaweb_10_2020&apos;&#x0D;&#x0A;- Original element: &apos;javaweb_10_2020/src/main/java/com.laptrinhjavaweb.util&apos;&#x0D;&#x0A;- Renamed element: &apos;javaweb_10_2020/src/main/java/com.laptrinhjavaweb.utils&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.laptrinhjavaweb.util&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.laptrinhjavaweb.util" name="com.laptrinhjavaweb.utils" qualified="false" references="true" stamp="1606930613858" textual="false" version="1.0"/>
+</session>
