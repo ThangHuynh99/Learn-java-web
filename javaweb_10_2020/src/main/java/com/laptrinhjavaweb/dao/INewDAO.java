@@ -9,6 +9,6 @@ public interface INewDAO  {
 	Long Save(NewModel newModel);
 	void update(NewModel updateNew);
 	void delete(long id);
-	List<NewModel> findAll(Integer offset, Integer limit);
+	List<NewModel> findAll(Integer offset, Integer limit, String sortName, String sortBy);
 	int getTotalItem();
 }

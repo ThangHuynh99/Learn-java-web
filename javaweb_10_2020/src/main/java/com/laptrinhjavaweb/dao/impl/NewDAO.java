@@ -141,7 +141,7 @@ public class NewDAO extends AbstractDAO<NewModel> implements INewDAO {
 		sql.append(" news (title, thumbnail, shortdescription, content, categoryid, ");
 		sql.append("createddate, createdby) VALUES(?, ?, ?, ?, ?, ?, ?)");
 		return insert(sql.toString(), newModel.getTitle(), newModel.getThumbnail(), newModel.getShortDescription(),
-				newModel.getContent(), newModel.getCategoryID(), newModel.getCreatedDate(), newModel.getCreatedBy(), 
+				newModel.getContent(), newModel.getCategoryID(), newModel.getCreatedDate(), newModel.getCreatedBy(),
 				newModel.getId());
 	}
 
@@ -150,11 +150,11 @@ public class NewDAO extends AbstractDAO<NewModel> implements INewDAO {
 		sql.append("shortdescription = ?, content = ?, categoryid = ?, ");
 		sql.append("createddate = ?, createdby = ?, modifieddate = ?, modifiedby = ? WHERE id = ?");
 		update(sql.toString(), updateNew.getTitle(), updateNew.getThumbnail(), updateNew.getShortDescription(),
-				updateNew.getContent(), updateNew.getCategoryID(), updateNew.getCreatedDate(), updateNew.getCreatedBy(), 
+				updateNew.getContent(), updateNew.getCategoryID(), updateNew.getCreatedDate(), updateNew.getCreatedBy(),
 				updateNew.getModifiedDate(), updateNew.getModifiedBy(), updateNew.getId());
 	}
 
-	//createddate = ?, createdby = ?
+	// createddate = ?, createdby = ?
 	// updateNew.getCreatedDate(), updateNew.getCreatedBy(),
 	@Override
 	public NewModel findOne(Long id) {
@@ -165,15 +165,25 @@ public class NewDAO extends AbstractDAO<NewModel> implements INewDAO {
 
 	@Override
 	public void delete(long id) {
-		String	sql = "DELETE FROM news where id = ?";
+		String sql = "DELETE FROM news where id = ?";
 		delete(sql, id);
 	}
 
 	@Override
 	//offset dung de phan trang, noi bat dau row.
-	public List<NewModel> findAll(Integer offset, Integer limit) {
-		String sql = "SELECT * from news LIMIT ?, ?";
-		return query(sql, new NewMapper(), offset, limit);
+	public List<NewModel> findAll(Integer offset, Integer limit, String sortName, String sortBy) {
+		StringBuilder sql = new StringBuilder("SELECT * from news");
+		if(sortName != null && sortBy != null) {
+			sql.append(" ORDER BY "+sortName+" "+sortBy+"");
+		}
+		if(offset != null && limit != null) {
+		//String sql = "SELECT * from news LIMIT ?, ?";
+			sql.append(" LIMIT ?, ?");
+			return query(sql.toString(), new NewMapper(), offset, limit);
+		}
+		else {
+			return query(sql.toString(), new NewMapper());
+		}
 	}
 
 	@Override

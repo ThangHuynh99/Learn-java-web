@@ -17,6 +17,8 @@ public class AbstractModel<T> {
 	private Integer maxPageItem;// tong so page hien thi
 	private Integer totalPage;// tong so page
 	private Integer totalItems;
+	private String sortName;
+	private String sortBy;
 	
 	public List<T> getListResult() {
 		return listResult;
@@ -129,6 +131,26 @@ public class AbstractModel<T> {
 
 	public void setTotalItems(Integer totalItems) {
 		this.totalItems = totalItems;
+	}
+
+
+	public String getSortBy() {
+		return sortBy;
+	}
+
+
+	public void setSortBy(String sortBy) {
+		this.sortBy = sortBy;
+	}
+
+
+	public String getSortName() {
+		return sortName;
+	}
+
+
+	public void setSortName(String sortName) {
+		this.sortName = sortName;
 	}
 
 

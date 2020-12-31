@@ -3,3 +3,5 @@
 1609169571196	Encapsulate field 'maxPageItem'
 1609169575138	Encapsulate field 'totalPage'
 1609169579219	Encapsulate field 'totalItems'
+1609343691450	Encapsulate field 'sortBy'
+1609343708125	Encapsulate field 'sortName'

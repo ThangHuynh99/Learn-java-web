@@ -44,6 +44,8 @@ contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
                     <ul class="pagination" id="pagination"></ul>
                     <input type="hidden" value="" id="page" name="page" />
                     <input type="hidden" value="" id="maxPageItem" name="maxPageItem" />
+                    <input type="hidden" value="" id="sortName" name="sortName" />
+                    <input type="hidden" value="" id="sortBy" name="sortBy" />
                   </div>
                 </div>
               </div>
@@ -66,6 +68,8 @@ contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
             if(currentPage != page){
             $('#maxPageItem').val(limit);
             $('#page').val(page);
+            $('#sortName').val('title');
+            $('#sortBy').val('desc');
             $('#formSubmit').submit();
             }
           }

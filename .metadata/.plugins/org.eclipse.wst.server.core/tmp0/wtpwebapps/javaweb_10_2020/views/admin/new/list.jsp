@@ -43,7 +43,9 @@ contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
                     </table>
                     <ul class="pagination" id="pagination"></ul>
                     <input type="hidden" value="" id="page" name="page" />
-                  	 
+                    <input type="hidden" value="" id="maxPageItem" name="maxPageItem" />
+                    <input type="hidden" value="" id="sortName" name="sortName" />
+                    <input type="hidden" value="" id="sortBy" name="sortBy" />
                   </div>
                 </div>
               </div>
@@ -54,7 +56,6 @@ contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
      </div>
     <script>
       $(function () {
-    	//  <input type="hidden" value="" id="maxPageItem" name="maxPageItem" />
 	  	var totalPages = ${model.totalPage};
    		var currentPage = ${model.page};
       	var limit = 2;     // tong so item hien thi tren 1 page
@@ -65,8 +66,10 @@ contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
           onPageClick: function (event, page) {
             /* 	console.info(page + ' (from options)'); */
             if(currentPage != page){
-           // $('#maxPageItem').val(limit);
+            $('#maxPageItem').val(limit);
             $('#page').val(page);
+            $('#sortName').val('title');
+            $('#sortBy').val('desc');
             $('#formSubmit').submit();
             }
           }

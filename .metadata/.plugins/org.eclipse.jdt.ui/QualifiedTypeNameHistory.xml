@@ -38,7 +38,6 @@
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="java.sql.Timestamp"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.service.INewService"/>
 <fullyQualifiedTypeName name="com.laptrinhjavaweb.model.NewModel"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -50,4 +49,6 @@
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="org.apache.commons.beanutils.BeanUtils"/>
 <fullyQualifiedTypeName name="java.lang.reflect.InvocationTargetException"/>
+<fullyQualifiedTypeName name="com.laptrinhjavaweb.utils.FormUtil"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 </qualifiedTypeNameHistroy>

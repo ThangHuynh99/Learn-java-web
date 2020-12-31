@@ -10,6 +10,6 @@ public interface INewService {
 	NewModel Save(NewModel newModel);
 	NewModel Update(NewModel updateNew);
 	void delete(long[] ids);
-	List<NewModel> findAll(Integer offset, Integer limit);
+	List<NewModel> findAll(Integer offset, Integer limit, String sortName, String sortBy);
 	int getTotalItem();
 }

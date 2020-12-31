@@ -1,0 +1,57 @@
+package com.laptrinhjavaweb.controller.admin;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.inject.Inject;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.laptrinhjavaweb.constant.SystemConstant;
+import com.laptrinhjavaweb.model.NewModel;
+import com.laptrinhjavaweb.service.INewService;
+import com.laptrinhjavaweb.service.impl.NewService;
+import com.laptrinhjavaweb.utils.FormUtil;
+
+@WebServlet(urlPatterns = { "/admin-new" })
+public class NewController extends HttpServlet {
+	@Inject
+	INewService newService;
+	
+	private static final long serialVersionUID = 2686801510274002166L;
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		NewModel newModel = FormUtil.toModel(NewModel.class, request);
+//		String pageStr = request.getParameter("page");
+//		String maxPageItemStr = request.getParameter("maxPageItem");
+//		if(pageStr != null) {
+//			newModel.setPage(Integer.parseInt(pageStr));
+//		}else {
+//			newModel.setPage(1);
+//		}
+//		
+//		if(maxPageItemStr != null) {
+//			newModel.setMaxPageItem(Integer.parseInt(maxPageItemStr));
+//		}
+		//newModel.setMaxPageItem(2);
+		
+		Integer offset = (newModel.getPage()-1) * newModel.getMaxPageItem();
+		newModel.setListResult(newService.findAll(offset, newModel.getMaxPageItem()));
+		newModel.setTotalItems(newService.getTotalItem());
+		//ham ceil tra ve integer nma lon hon hoac bang tham so 
+		newModel.setTotalPage((int) Math.ceil((double) newModel.getTotalItems() / newModel.getMaxPageItem()));
+		request.setAttribute(SystemConstant.MODEL, newModel);
+		RequestDispatcher rd = request.getRequestDispatcher("/views/admin/new/list.jsp");
+		rd.forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+	}
+}

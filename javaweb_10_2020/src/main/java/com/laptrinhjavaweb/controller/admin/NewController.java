@@ -15,6 +15,7 @@ import com.laptrinhjavaweb.constant.SystemConstant;
 import com.laptrinhjavaweb.model.NewModel;
 import com.laptrinhjavaweb.service.INewService;
 import com.laptrinhjavaweb.service.impl.NewService;
+import com.laptrinhjavaweb.utils.FormUtil;
 
 @WebServlet(urlPatterns = { "/admin-new" })
 public class NewController extends HttpServlet {
@@ -25,7 +26,7 @@ public class NewController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		NewModel newModel = new NewModel();
+		NewModel newModel = FormUtil.toModel(NewModel.class, request);
 //		String pageStr = request.getParameter("page");
 //		String maxPageItemStr = request.getParameter("maxPageItem");
 //		if(pageStr != null) {
@@ -40,9 +41,9 @@ public class NewController extends HttpServlet {
 		//newModel.setMaxPageItem(2);
 		
 		Integer offset = (newModel.getPage()-1) * newModel.getMaxPageItem();
-		newModel.setListResult(newService.findAll(offset, newModel.getMaxPageItem()));
+		newModel.setListResult(newService.findAll(offset, newModel.getMaxPageItem(), newModel.getSortName(), newModel.getSortBy()));
 		newModel.setTotalItems(newService.getTotalItem());
-		//ham ceil tra ve integer nma lon hon hoac bang tham so 
+		//ham ceil tra ve integer ma lon hon hoac bang tham so 
 		newModel.setTotalPage((int) Math.ceil((double) newModel.getTotalItems() / newModel.getMaxPageItem()));
 		request.setAttribute(SystemConstant.MODEL, newModel);
 		RequestDispatcher rd = request.getRequestDispatcher("/views/admin/new/list.jsp");
