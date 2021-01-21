@@ -21,17 +21,8 @@
 				<div class="page-content">
 					<div class="row">
 						<div class="col-xs-12">
-							<c:if test="${not empty message}">
-								<div class="alert alert-${alert}">${message}</div>
-								<script>
-									function alert(){
-
-									}
-									window.onload = function()
-									{
-										alert(${message});
-									};
-								</script>
+							<c:if test="${not empty messageResponse}">
+								<div class="alert alert-${alert}">${messageResponse}</div>
 							</c:if>
 							<div class="widget-box table-filter">
 								<div class="table-btn-controls">
@@ -141,10 +132,10 @@
 				data: JSON.stringify(data),
 				//dataType: 'json',
 				success: function (result) {
-					window.location.href = "${NewURL}?type=list&page=1&maxPageItem=4&message=deleteSuccessfull";
+					window.location.href = "${NewURL}?type=list&page=1&maxPageItem=4&message=deleteSuccess";
 				},
 				error: function (error) {
-					window.location.href = "${NewURL}?type=list&page=1&maxPageItem=4&message=deleteError";
+					window.location.href = "${NewURL}?type=list&page=1&maxPageItem=4&message=errorSystem";
 				}
 			});
 		}

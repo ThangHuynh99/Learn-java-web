@@ -25,9 +25,9 @@
         <div class="page-content">
             <div class="row">
                 <div class="col-xs-12">
-                        <c:if test="${not empty message}">
+                        <c:if test="${not empty messageResponse}">
 							<div class="alert alert-${alert}">
-                                ${message}
+                                ${messageResponse}
                             </div>
                         </c:if>
                         
@@ -142,10 +142,10 @@
 				data: JSON.stringify(data),
 				dataType: 'json',
 				success: function (result) {
-                    window.location.href = "${NewURL}?type=edit&message=insertSuccessful&id="+result.id+"";
+                    window.location.href = "${NewURL}?type=edit&message=insertSuccess&id="+result.id+"";
 				},
 				error: function (error) {
-                    window.location.href = "${NewURL}?type=list&page=1&maxPageItem=4&message=insertError";
+                    window.location.href = "${NewURL}?type=list&page=1&maxPageItem=4&message=errorSystem";
 				}
 			});
 		}
@@ -158,10 +158,10 @@
 				data: JSON.stringify(data),
 				dataType: 'json',
 				success: function (result) {
-                    window.location.href = "${NewURL}?type=edit&id="+result.id+"&message=updateSuccessful";
+                    window.location.href = "${NewURL}?type=edit&id="+result.id+"&message=updateSuccess";
 				},
 				error: function (error) {
-                    window.location.href = "${NewURL}?type=edit&id="+data.id+"&message=updateSuccessful";
+                    window.location.href = "${NewURL}?type=edit&id="+data.id+"&message=errorSystem";
 				}
 			});
 		}
