@@ -1,7 +1,7 @@
 package com.laptrinhjavaweb.controller.admin;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.ResourceBundle;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -13,45 +13,66 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.laptrinhjavaweb.constant.SystemConstant;
 import com.laptrinhjavaweb.model.NewModel;
+import com.laptrinhjavaweb.paging.PageRequest;
+import com.laptrinhjavaweb.paging.Pageble;
+import com.laptrinhjavaweb.service.ICategoryService;
 import com.laptrinhjavaweb.service.INewService;
-import com.laptrinhjavaweb.service.impl.NewService;
+import com.laptrinhjavaweb.sort.Sorter;
 import com.laptrinhjavaweb.utils.FormUtil;
+import com.laptrinhjavaweb.utils.MessageUtil;
+
 
 @WebServlet(urlPatterns = { "/admin-new" })
 public class NewController extends HttpServlet {
 	@Inject
-	INewService newService;
+	private INewService newService;
 	
+	@Inject
+	private ICategoryService categoryService;
 	private static final long serialVersionUID = 2686801510274002166L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		NewModel newModel = FormUtil.toModel(NewModel.class, request);
-//		String pageStr = request.getParameter("page");
-//		String maxPageItemStr = request.getParameter("maxPageItem");
-//		if(pageStr != null) {
-//			newModel.setPage(Integer.parseInt(pageStr));
-//		}else {
-//			newModel.setPage(1);
-//		}
-//		
-//		if(maxPageItemStr != null) {
-//			newModel.setMaxPageItem(Integer.parseInt(maxPageItemStr));
-//		}
-		//newModel.setMaxPageItem(2);
-		
-		Integer offset = (newModel.getPage()-1) * newModel.getMaxPageItem();
-		newModel.setListResult(newService.findAll(offset, newModel.getMaxPageItem(), newModel.getSortName(), newModel.getSortBy()));
-		newModel.setTotalItems(newService.getTotalItem());
-		//ham ceil tra ve integer ma lon hon hoac bang tham so 
-		newModel.setTotalPage((int) Math.ceil((double) newModel.getTotalItems() / newModel.getMaxPageItem()));
+		String view = "";
+		NewModelnewModel = FormUtil.toModel(NewModel.class, request);
+		if(newModel.getType().equals(SystemConstant.LIST)) {
+	//		String pageStr = request.getParameter("page");
+	//		String maxPageItemStr = request.getParameter("maxPageItem");
+	//		if(pageStr != null) {
+	//			newModel.setPage(Integer.parseInt(pageStr));
+	//		}else {
+	//			newModel.setPage(1);
+	//		}
+	//		
+	//		if(maxPageItemStr != null) {
+	//			newModel.setMaxPageItem(Integer.parseInt(maxPageItemStr));
+	//		}
+			//newModel.setMaxPageItem(2); set cung maxpageitem
+			Pageble page = new PageRequest(newModel.getPage(), newModel.getMaxPageItem(), new Sorter(newModel.getSortName(), newModel.getSortBy()));
+		//	Integer offset = (newModel.getPage()-1) * newModel.getMaxPageItem(); code cu
+			//newModel.setListResult(newService.findAll(offset, newModel.getMaxPageItem(), newModel.getSortName(), newModel.getSortBy())); code cu
+			newModel.setListResult(newService.findAll(page));
+			newModel.setTotalItems(newService.getTotalItem());
+			//ham ceil tra ve integer ma lon hon hoac bang tham so 
+			newModel.setTotalPage((int) Math.ceil((double) newModel.getTotalItems() / newModel.getMaxPageItem()));
+			view = "/views/admin/new/list.jsp";
+		} else if(newModel.getType().equals(SystemConstant.EDIT)) {
+			view = "/views/admin/new/edit.jsp";
+			request.setAttribute("categories", categoryService.findAll());
+			if(newModel.getId() != null) {
+				//findOne phai truy van them du lieu tu bang category de co du lieu categoryCode mapping vao NewModel
+				newModel = newService.findOne(newModel.getId());
+			} else {
+			}
+		}
+		MessageUtil.showMessage(request);
 		request.setAttribute(SystemConstant.MODEL, newModel);
-		RequestDispatcher rd = request.getRequestDispatcher("/views/admin/new/list.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher(view);
 		rd.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+	
 	}
 }

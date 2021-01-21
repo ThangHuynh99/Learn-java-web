@@ -1,9 +1,6 @@
 package com.laptrinhjavaweb.controller.admin.api;
 
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
-
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,8 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.laptrinhjavaweb.model.NewModel;
+import com.laptrinhjavaweb.model.UserModel;
 import com.laptrinhjavaweb.service.INewService;
 import com.laptrinhjavaweb.utils.HttpUtil;
+import com.laptrinhjavaweb.utils.SessionUtil;
 
 @WebServlet(urlPatterns = { "/api-admin-new" })
 public class NewAPI extends HttpServlet{
@@ -26,25 +25,25 @@ public class NewAPI extends HttpServlet{
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json");
-		
 		//biding tu json request sang NewModel
 //		NewModel newModel = HttpUtil.of(request.getReader()).toModel(NewModel.class); method 1
 		NewModel newModel = mapper.readValue(HttpUtil.off(request.getReader()), NewModel.class);
-		newModel = newService.Save(newModel);
-//		System.out.println(newModel);
+		newModel.setCreatedBy(((UserModel) SessionUtil.getInstance().getValue(request, "USERMODEL")).getUserName());
+		newModel = newService.Save(newModel);			
 		mapper.writeValue(response.getOutputStream(), newModel);
-	}
-	
+}
+
 	protected void doPut(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json");
 		//biding tu json request sang NewModel
 		NewModel updateNew = HttpUtil.of(request.getReader()).toModel(NewModel.class);
+		updateNew.setModifiedBy(((UserModel) SessionUtil.getInstance().getValue(request, "USERMODEL")).getUserName());
 		updateNew = newService.Update(updateNew);
 		mapper.writeValue(response.getOutputStream(), updateNew);
 	}
-	
+
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
@@ -53,10 +52,4 @@ public class NewAPI extends HttpServlet{
 		newService.delete(deleteNew.getIds());
 		mapper.writeValue(response.getOutputStream(), "{}");
 	}
-
-	private void saveOrUpdate() {
-		
-	}
-	
-
 }
