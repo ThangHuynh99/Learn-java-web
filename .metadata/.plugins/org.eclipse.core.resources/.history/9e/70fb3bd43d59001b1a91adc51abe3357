@@ -1,0 +1,4 @@
+user_pass_invalid = Username or Password is invalid!
+not_login = You need to login to access system!
+not_permission = you have not permission!
+categoryIDNull = you have to choose The Loai

@@ -18,8 +18,8 @@ import com.laptrinhjavaweb.service.ICategoryService;
 import com.laptrinhjavaweb.service.INewService;
 import com.laptrinhjavaweb.service.IUserService;
 import com.laptrinhjavaweb.service.impl.NewService;
-import com.laptrinhjavaweb.utils.FormUtil;
-import com.laptrinhjavaweb.utils.SessionUtil;
+import com.laptrinhjavaweb1.utils.FormUtil;
+import com.laptrinhjavaweb1.utils.SessionUtil;
 
 @WebServlet(urlPatterns = { "/trang-chu", "/login", "/logout" })
 public class HomeController extends HttpServlet {

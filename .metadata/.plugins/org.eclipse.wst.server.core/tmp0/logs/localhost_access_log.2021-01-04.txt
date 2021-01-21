@@ -1,0 +1,11 @@
+127.0.0.1 - - [04/Jan/2021:11:55:29 +0700] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [04/Jan/2021:11:55:31 +0700] "GET /javaweb_10_2020/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [04/Jan/2021:11:55:32 +0700] "GET /javaweb_10_2020/trang-chu HTTP/1.1" 200 7776
+0:0:0:0:0:0:0:1 - - [04/Jan/2021:11:55:33 +0700] "GET /javaweb_10_2020/template/css/style.css HTTP/1.1" 200 191
+0:0:0:0:0:0:0:1 - - [04/Jan/2021:11:55:33 +0700] "GET /javaweb_10_2020/template/web/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 181365
+0:0:0:0:0:0:0:1 - - [04/Jan/2021:11:55:33 +0700] "GET /javaweb_10_2020/template/web/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 78635
+0:0:0:0:0:0:0:1 - - [04/Jan/2021:11:55:33 +0700] "GET /javaweb_10_2020/template/web/jquery/jquery.min.js HTTP/1.1" 200 88145
+0:0:0:0:0:0:0:1 - - [04/Jan/2021:11:55:34 +0700] "GET /favicon.ico HTTP/1.1" 404 1085
+0:0:0:0:0:0:0:1 - - [04/Jan/2021:11:55:48 +0700] "GET /javaweb_10_2020/login?action=login HTTP/1.1" 200 2158
+0:0:0:0:0:0:0:1 - - [04/Jan/2021:11:55:48 +0700] "GET /javaweb_10_2020/template/login/login.css HTTP/1.1" 200 1454
+0:0:0:0:0:0:0:1 - - [04/Jan/2021:11:55:48 +0700] "GET /javaweb_10_2020/js.js HTTP/1.1" 404 1099

@@ -7,16 +7,16 @@
 <meta name="viewport" http-equiv="Content-Type"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no, text/html">
 <meta charset="UTF-8">
-<title>Trang chủ</title>
+<title>Home page</title>
 </head>
 <body>
-	<div class="row">
-		<div class="col-lg-3">
-			<h1 class="my-4">Shop Name</h1>
+	<div class="row ">
+		<div class="col-lg-3 ">
+			<h1 class="my-4"  style="padding-left: 90px;">T&T</h1>
 			<div class="list-group">
-				<a href="#" class="list-group-item">Category 1</a> <a href="#"
-					class="list-group-item">Category 2</a> <a href="#"
-					class="list-group-item">Category 3</a>
+				<a href="#" class="list-group-item" style="padding-left: 90px;">Category 1</a>
+				<a href="#" class="list-group-item" style="padding-left: 90px;">Category 2</a>
+				<a href="#"	class="list-group-item" style="padding-left: 90px;">Category 3</a>
 			</div>
 
 		</div>

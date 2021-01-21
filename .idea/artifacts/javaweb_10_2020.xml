@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="javaweb_10_2020">
+    <output-path>$PROJECT_DIR$/javaweb_10_2020/target/javaweb_10_2020-1.0.war</output-path>
+    <root id="archive" name="unnamed.war" />
+  </artifact>
+</component>

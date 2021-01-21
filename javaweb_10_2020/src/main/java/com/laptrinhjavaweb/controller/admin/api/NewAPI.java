@@ -1,19 +1,19 @@
 package com.laptrinhjavaweb.controller.admin.api;
 
-import java.io.IOException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.laptrinhjavaweb.model.NewModel;
+import com.laptrinhjavaweb.model.UserModel;
+import com.laptrinhjavaweb.service.INewService;
+import com.laptrinhjavaweb1.utils.HttpUtil;
+import com.laptrinhjavaweb1.utils.SessionUtil;
+
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.laptrinhjavaweb.model.NewModel;
-import com.laptrinhjavaweb.model.UserModel;
-import com.laptrinhjavaweb.service.INewService;
-import com.laptrinhjavaweb.utils.HttpUtil;
-import com.laptrinhjavaweb.utils.SessionUtil;
+import java.io.IOException;
 
 @WebServlet(urlPatterns = { "/api-admin-new" })
 public class NewAPI extends HttpServlet{

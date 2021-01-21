@@ -1,0 +1,9 @@
+127.0.0.1 - - [01/Jan/2021:01:02:59 +0700] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [01/Jan/2021:01:03:00 +0700] "GET /javaweb_10_2020/ HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [01/Jan/2021:01:03:00 +0700] "GET /javaweb_10_2020/trang-chu HTTP/1.1" 200 7741
+0:0:0:0:0:0:0:1 - - [01/Jan/2021:01:03:01 +0700] "GET /javaweb_10_2020/template/css/style.css HTTP/1.1" 200 191
+0:0:0:0:0:0:0:1 - - [01/Jan/2021:01:03:01 +0700] "GET /javaweb_10_2020/template/web/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 181365
+0:0:0:0:0:0:0:1 - - [01/Jan/2021:01:03:01 +0700] "GET /javaweb_10_2020/template/web/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 78635
+0:0:0:0:0:0:0:1 - - [01/Jan/2021:01:03:01 +0700] "GET /javaweb_10_2020/template/web/jquery/jquery.min.js HTTP/1.1" 200 88145
+0:0:0:0:0:0:0:1 - - [01/Jan/2021:01:03:02 +0700] "GET /favicon.ico HTTP/1.1" 404 1085
+0:0:0:0:0:0:0:1 - - [01/Jan/2021:01:03:48 +0700] "POST /javaweb_10_2020/api-admin-new HTTP/1.1" 200 373

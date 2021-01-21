@@ -12,9 +12,9 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.laptrinhjavaweb.constant.SystemConstant;
 import com.laptrinhjavaweb.model.UserModel;
-import com.laptrinhjavaweb.utils.SessionUtil;
+import com.laptrinhjavaweb1.constant.SystemConstant;
+import com.laptrinhjavaweb1.utils.SessionUtil;
 
 public class AuthorizationFilter implements Filter {
 	private ServletContext context;

@@ -1,0 +1,17 @@
+package com.laptrinhjavaweb.dao.impl;
+
+import com.laptrinhjavaweb.dao.ICommentDAO;
+import com.laptrinhjavaweb.model.CommentModel;
+import com.laptrinhjavaweb.model.NewModel;
+import com.laptrinhjavaweb.service.ICommentService;
+
+public class CommentDAO extends AbstractDAO<CommentModel> implements ICommentDAO{
+
+	@Override
+	public void delete(long id) {
+		String sql = "DELETE FROM news where new_id = ?";
+		delete(sql, id);
+	}
+
+
+}

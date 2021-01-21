@@ -6,7 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
+		<item key="selection" value="path"/>
 		<list key="findhistory">
+			<item value="path"/>
 			<item value="updateNew.getTitle(), updateNew.getThumbnail(), updateNew.getShortDescription(),"/>
 			<item value="public void delete(String sql, Object... parameters) {"/>
 			<item value="newmo"/>

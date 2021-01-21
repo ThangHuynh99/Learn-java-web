@@ -11,15 +11,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.laptrinhjavaweb.constant.SystemConstant;
 import com.laptrinhjavaweb.model.NewModel;
 import com.laptrinhjavaweb.paging.PageRequest;
 import com.laptrinhjavaweb.paging.Pageble;
 import com.laptrinhjavaweb.service.ICategoryService;
 import com.laptrinhjavaweb.service.INewService;
 import com.laptrinhjavaweb.sort.Sorter;
-import com.laptrinhjavaweb.utils.FormUtil;
-import com.laptrinhjavaweb.utils.MessageUtil;
+import com.laptrinhjavaweb1.constant.SystemConstant;
+import com.laptrinhjavaweb1.utils.FormUtil;
+import com.laptrinhjavaweb1.utils.MessageUtil;
 
 
 @WebServlet(urlPatterns = { "/admin-new" })
@@ -34,7 +34,7 @@ public class NewController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String view = "";
-		NewModelnewModel = FormUtil.toModel(NewModel.class, request);
+		NewModel newModel = FormUtil.toModel(NewModel.class, request);
 		if(newModel.getType().equals(SystemConstant.LIST)) {
 	//		String pageStr = request.getParameter("page");
 	//		String maxPageItemStr = request.getParameter("maxPageItem");

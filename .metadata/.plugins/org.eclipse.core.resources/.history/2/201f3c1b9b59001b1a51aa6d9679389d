@@ -1,0 +1,13 @@
+package com.laptrinhjavaweb.dao.impl;
+
+import com.laptrinhjavaweb.service.ICommentService;
+
+public class CommentDAO implements ICommentDAO{
+
+	@Override
+	public void delete(long id) {
+		String sql = "DELETE FROM comment where new_id = ?";
+		delete(sql, id);
+	}
+
+}

@@ -163,8 +163,4 @@ public class AbstractModel<T> {
 	public void setType(String type) {
 		this.type = type;
 	}
-
-
-	
-
 }
